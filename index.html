@@ -96,7 +96,7 @@ section{padding:80px 0}
 .contact h2{font-family:Outfit,sans-serif;font-weight:800;font-size:2.2rem;position:relative}
 .contact p{opacity:.85;margin:8px 0 28px;position:relative}
 .links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;position:relative}
-.links a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;
+.links a{display:inline-flex;max-width:100%;word-break:break-all;align-items:center;gap:8px;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);transition:background .2s,transform .2s}
 .links a:hover{background:#fff;color:var(--blue);transform:translateY(-2px)}
 .links svg{width:18px;height:18px;fill:currentColor}
@@ -184,7 +184,17 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:48px 0}
       <div class="fav"><b>🎬</b>映画・読書</div>
       <div class="fav"><b>🎧</b>ラジオ・Podcast</div>
     </div>
-    <p class="music">よく聴く音楽 — <strong>SEKAI NO OWARI</strong> ／ <strong>Todd Rundgren</strong></p>
+    <p class="music">よく聴く音楽 — <strong>SEKAI NO OWARI</strong></p>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Contact</h2>
+      <p>スタートアップに興味がある人、どんな方でもぜひ気軽に連絡ください！</p>
+      <div class="links">
+        <a href="mailto:keitarou.kosh@gmail.com"><svg viewBox="0 0 24 24"><path d="M2 4h20a2 2 0 012 2v12a2 2 0 01-2 2H2a2 2 0 01-2-2V6a2 2 0 012-2zm10 8.4L2.4 6H2v.6l10 6.7 10-6.7V6h-.4L12 12.4z"/></svg>keitarou.kosh@gmail.com</a>
+      </div>
+    </div>
   </section>
 
 </main>
