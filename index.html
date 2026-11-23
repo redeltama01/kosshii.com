@@ -86,6 +86,16 @@ section{display:grid;grid-template-columns:240px 1fr;gap:48px;padding:88px 0;bor
 .likes dd{font-family:var(--serif-ja);font-size:17px;letter-spacing:.08em}
 
 .contact .msg{font-family:var(--serif-ja);font-size:22px;line-height:1.9;letter-spacing:.08em;max-width:22em}
+.ways{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:end;margin-top:40px}
+.book{position:relative;display:block;background:var(--ink);color:var(--paper);padding:26px 72px 26px 28px;overflow:hidden;transition:transform .25s}
+.book::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--ultra) 33.3%,var(--rose) 33.3% 66.6%,var(--aqua) 66.6%)}
+.book-en{display:block;font-family:var(--serif-en);font-style:italic;font-size:15px;opacity:.7}
+.book-ja{display:block;font-family:var(--serif-ja);font-weight:600;font-size:22px;letter-spacing:.1em;margin-top:2px}
+.book-sub{display:block;font-size:11.5px;letter-spacing:.08em;opacity:.65;margin-top:6px;line-height:1.6}
+.book .arrow{position:absolute;right:26px;top:50%;width:26px;height:26px;margin-top:-13px;fill:none;stroke:currentColor;stroke-width:1.4;transition:transform .25s}
+.book:hover .arrow{transform:translateX(6px)}
+.book:hover{transform:translateY(-2px)}
+.ways .mail{margin-top:0;font-size:24px;justify-self:start}
 .mail{display:inline-block;margin-top:36px;font-family:var(--serif-en);font-size:30px;letter-spacing:.01em;word-break:break-all;
   background:linear-gradient(90deg,var(--ultra),var(--rose),var(--aqua)) left bottom/100% 2px no-repeat;padding-bottom:4px;transition:background-size .3s}
 .mail:hover{background-size:0 2px}
@@ -104,7 +114,8 @@ footer .mark{font-family:var(--serif-en);font-style:italic;font-size:15px}
   .entries li{grid-template-columns:1fr;gap:6px}
   .likes{grid-template-columns:96px 1fr}
   .contact .msg{font-size:19px}
-  .mail{font-size:24px}
+  .mail,.ways .mail{font-size:22px}
+  .ways{grid-template-columns:1fr;gap:32px}
 }
 </style>
 </head>
@@ -166,7 +177,15 @@ footer .mark{font-family:var(--serif-en);font-style:italic;font-size:15px}
       <div class="label"><span class="no">04</span><h2>Contact</h2><p>連絡先</p></div>
       <div>
         <p class="msg">スタートアップに興味がある人、どんな方でもぜひ気軽に連絡ください。</p>
-        <a class="mail" href="mailto:keitarou.kosh@gmail.com"><span>MAIL</span>keitarou.kosh@gmail.com</a>
+        <div class="ways">
+          <a class="book" href="https://calendar.app.google/P2XAVX8WN4ny8qPC8" target="_blank" rel="noopener">
+            <span class="book-en">Book a time</span>
+            <span class="book-ja">ご相談はこちらから</span>
+            <span class="book-sub">空いている日時から予約できます</span>
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="mail" href="mailto:keitarou.kosh@gmail.com"><span>OR MAIL</span>keitarou.kosh@gmail.com</a>
+        </div>
       </div>
     </section>
   </main>
