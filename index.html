@@ -14,14 +14,14 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23f3efe8'/><rect x='0' y='56' width='22' height='8' fill='%232a3bb8'/><rect x='22' y='56' width='21' height='8' fill='%23c8487a'/><rect x='43' y='56' width='21' height='8' fill='%235aaeb0'/><text x='50%' y='46%' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%231d1c1a'>K</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=BIZ+UDGothic:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#f3efe8; --ink:#1d1c1a; --sub:#6c675f; --rule:#d6cfc3;
   --ultra:#2a3bb8; --rose:#c8487a; --aqua:#3f9a9d;
   --serif-en:"Cormorant Garamond",Georgia,serif;
-  --serif-ja:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
-  --sans:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+  --serif-ja:var(--sans);
+  --sans:"MS Gothic","ＭＳ ゴシック","BIZ UDGothic","Osaka-Mono",monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -54,8 +54,9 @@ nav a:hover{color:var(--ink)}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1fr 420px;gap:72px;align-items:end;padding:72px 0 96px;border-bottom:1px solid var(--rule)}
+.hero .catch{font-family:var(--sans);font-size:clamp(20px,2.4vw,26px);letter-spacing:.14em;color:var(--rose);margin-bottom:28px;padding-left:16px;border-left:2px solid var(--rose);line-height:1.6}
 .hero .en{font-family:var(--serif-en);font-style:italic;font-size:22px;color:var(--sub);letter-spacing:.04em}
-.hero h1{font-family:var(--serif-ja);font-weight:600;font-size:clamp(44px,6.4vw,76px);line-height:1.25;letter-spacing:.12em;margin:10px 0 36px}
+.hero h1{font-family:var(--serif-ja);font-weight:400;font-size:clamp(44px,6.4vw,76px);line-height:1.25;letter-spacing:.12em;margin:10px 0 36px}
 .hero .role{font-size:13px;letter-spacing:.16em;color:var(--sub);padding-bottom:20px;margin-bottom:24px;border-bottom:1px solid var(--rule);display:inline-block}
 .hero .lead{max-width:30em;font-size:15.5px}
 .hero figure{position:relative;margin-bottom:18px}
@@ -75,7 +76,7 @@ section{display:grid;grid-template-columns:240px 1fr;gap:48px;padding:88px 0;bor
 .entries li:first-child{border-top:0;padding-top:4px}
 .entries .meta{font-size:12px;letter-spacing:.14em;color:var(--sub);padding-top:6px}
 .entries .meta b{display:block;font-weight:500;color:var(--k,var(--ink))}
-.entries h3{font-family:var(--serif-ja);font-weight:600;font-size:21px;letter-spacing:.08em;margin-bottom:8px}
+.entries h3{font-family:var(--serif-ja);font-weight:400;font-size:20px;letter-spacing:.08em;margin-bottom:8px}
 .entries p{color:var(--sub)}
 .k1{--k:var(--ultra)} .k2{--k:var(--rose)} .k3{--k:var(--aqua)}
 .year{font-family:var(--serif-en);font-size:20px;letter-spacing:.04em;color:var(--ink)!important}
@@ -85,16 +86,16 @@ section{display:grid;grid-template-columns:240px 1fr;gap:48px;padding:88px 0;bor
 .likes dt{font-size:12px;letter-spacing:.16em;color:var(--sub);padding-top:19px}
 .likes dd{font-family:var(--serif-ja);font-size:17px;letter-spacing:.08em}
 
-.contact .msg{font-family:var(--serif-ja);font-size:22px;line-height:1.9;letter-spacing:.08em;max-width:22em}
+.contact .msg{font-family:var(--serif-ja);font-size:20px;line-height:1.9;letter-spacing:.08em;max-width:22em}
 .ways{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:end;margin-top:40px}
-.book{position:relative;display:block;background:var(--ink);color:var(--paper);padding:26px 72px 26px 28px;overflow:hidden;transition:transform .25s}
-.book::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--ultra) 33.3%,var(--rose) 33.3% 66.6%,var(--aqua) 66.6%)}
-.book-en{display:block;font-family:var(--serif-en);font-style:italic;font-size:15px;opacity:.7}
-.book-ja{display:block;font-family:var(--serif-ja);font-weight:600;font-size:22px;letter-spacing:.1em;margin-top:2px}
-.book-sub{display:block;font-size:11.5px;letter-spacing:.08em;opacity:.65;margin-top:6px;line-height:1.6}
+.book{position:relative;display:block;border:1px solid var(--rule);color:var(--ink);padding:24px 72px 24px 26px;overflow:hidden;transition:border-color .25s,background-color .25s}
+.book::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,var(--ultra) 33.3%,var(--rose) 33.3% 66.6%,var(--aqua) 66.6%)}
+.book-en{display:block;font-family:var(--serif-en);font-style:italic;font-size:15px;color:var(--sub)}
+.book-ja{display:block;font-family:var(--serif-ja);font-weight:400;font-size:22px;letter-spacing:.1em;margin-top:2px}
+.book-sub{display:block;font-size:11.5px;letter-spacing:.08em;color:var(--sub);margin-top:6px;line-height:1.6}
 .book .arrow{position:absolute;right:26px;top:50%;width:26px;height:26px;margin-top:-13px;fill:none;stroke:currentColor;stroke-width:1.4;transition:transform .25s}
 .book:hover .arrow{transform:translateX(6px)}
-.book:hover{transform:translateY(-2px)}
+.book:hover{border-color:var(--ink)}
 .ways .mail{margin-top:0;font-size:24px;justify-self:start}
 .mail{display:inline-block;margin-top:36px;font-family:var(--serif-en);font-size:30px;letter-spacing:.01em;word-break:break-all;
   background:linear-gradient(90deg,var(--ultra),var(--rose),var(--aqua)) left bottom/100% 2px no-repeat;padding-bottom:4px;transition:background-size .3s}
@@ -135,6 +136,7 @@ footer .mark{font-family:var(--serif-en);font-style:italic;font-size:15px}
 
   <header class="hero" id="top">
     <div>
+      <p class="catch">スタートアップが大好きです！</p>
       <p class="en">Keitaro Koshio</p>
       <h1>小塩 啓太郎</h1>
       <p class="role">慶應義塾大学 商学部 3年</p>
